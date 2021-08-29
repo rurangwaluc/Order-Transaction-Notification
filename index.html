@@ -1,0 +1,568 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order notification HTML Email</title>
+  <style type="text/css">
+    @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;900&display=swap');
+
+    * {
+      margin: 0;
+      border: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Lato', sans-serif;
+      margin: 0;
+      background-color: #F5F5F5;
+
+    }
+
+    table {
+      border-spacing: 0;
+    }
+
+    td {
+      padding: 0;
+    }
+
+    img {
+      border: 0;
+    }
+
+
+    .wrapper {
+      width: 100%;
+      table-layout: fixed;
+      padding-bottom: 40px;
+    }
+
+    .main {
+      background-color: #ffffff;
+      /* box-shadow: 0 0 10px #666; */
+      margin: 50px auto;
+      width: 100%;
+      max-width: 600px;
+      border-spacing: 0;
+      font-family: sans-serif;
+      color: #4a4a4a;
+    }
+
+    .button {
+      background-color: #FC7318;
+      color: #ffffff;
+      text-decoration: none;
+      padding: 12px 15px;
+      font-weight: 300;
+      text-transform: uppercase;
+      font-family: "Trebuchet MS", sans-serif;
+      font-size: 16px;
+      border-radius: 5px;
+    }
+
+    .btn {
+      background-color: #D6E7F0;
+      color: #052D3D;
+      text-decoration: none;
+      padding: 5px 10px;
+      font-weight: 300;
+      text-transform: capitalize;
+      font-family: "Trebuchet MS", sans-serif;
+      font-size: 16px;
+      border-radius: 5px;
+    }
+
+    .hero {
+      padding: 40px 20px;
+    }
+
+    .spans {
+      font-size: 38px;
+    }
+
+    .hero_column {
+      display: flex;
+      justify-content: space-evenly;
+    }
+
+    .list {
+      padding: 20px;
+    }
+
+    .table table {
+      border: 1px solid #ccc;
+      border-collapse: collapse;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      table-layout: fixed;
+    }
+
+    .table table caption {
+      font-size: 1.5em;
+      margin: .5em 0 .75em;
+    }
+
+    .table table tr {
+      background-color: #f8f8f8;
+      border: 1px solid #ddd;
+      padding: .35em;
+    }
+
+    .table table td {
+      background: #ffffff;
+    }
+
+    .table table th,
+    .table table td {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .table table th {
+      font-size: .85em;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .table table,
+    th,
+    td {
+      border: 1px solid #F8F8F8;
+      border-collapse: collapse;
+    }
+
+    .product_item_image img {
+      width: 100px;
+      height: 100px;
+    }
+
+    .totals table,
+    th,
+    td {
+      border: 1px solid #F8F8F8;
+      border-collapse: collapse;
+    }
+
+    .totals {
+      margin-top: -10px;
+      padding: 20px;
+    }
+
+    .total {
+      margin: 0px auto;
+      padding: 20px 0px;
+    }
+
+
+    .total_text {
+      width: 380px;
+      text-align: right;
+      padding-right: 20px;
+    }
+
+    .total_number {
+      width: 160px;
+      text-align: right;
+      padding-right: 20px;
+      border-left: 1px solid #e4e4e4;
+    }
+
+
+    .the_spen {
+      font-size: 34px;
+    }
+
+    .before_footer {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .before_footer_items {
+      background-color: #F0F0F0;
+      padding: 40px;
+    }
+
+    @media screen and (max-width: 600px) {
+      .main {
+        margin: 5px auto;
+      }
+
+      .logo {
+        margin: 15px;
+      }
+
+      .hero {
+        margin: 5px;
+      }
+
+      .spans {
+        font-size: 29px;
+      }
+
+      /*          
+    .hero_column{
+      display: flex;
+      flex-direction: column;
+    } */
+      .table table {
+        border: 0;
+      }
+
+      .table table caption {
+        font-size: 1.3em;
+      }
+
+      .table table thead {
+        border: none;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+      }
+
+      .table table tr {
+        border-bottom: 1px solid #F8F8F8;
+        display: block;
+        margin-bottom: .625em;
+      }
+
+      .table table td {
+        border-bottom: 1px solid #F8F8F8;
+        display: block;
+        font-size: .8em;
+        text-align: right;
+      }
+
+      .table table td::before {
+        /*
+    * aria-label has no advantage, it won't be read inside a table
+    content: attr(aria-label);
+    */
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+
+      .table table td:last-child {
+        border-bottom: 0;
+      }
+
+      .the_spen {
+        font-size: 23px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <center class="wrapper">
+
+    <table class="main" width="100%">
+
+      <!-- Header SECTION -->
+      <tr>
+        <td>
+          <div class="logo"
+            style="background-color: #ffffff; padding:  20px; display: flex; justify-content: space-between;">
+
+
+            <div>
+              <a href="#">
+
+                <img src="img/Logo.png" alt="Logo" width="175" height="60">
+              </a>
+            </div>
+            <div class="items">
+              <div style="margin-top: 20px;">
+
+                <a href="#" class="btn" style="text-decoration: none; font-size: 14px; ">My account</a>
+              </div>
+
+            </div>
+          </div>
+        </td>
+      </tr>
+
+
+      <!--  HERO SECTION -->
+      <tr>
+        <td>
+          <div class="hero" style="background-color: #D6E7F0; ">
+            <br>
+            <div style="text-align: center;">
+
+              <span class="spans" style="color: #050505; font-weight: 600;">Thanks for your <span
+                  style="color: #2190E3;">order</span> </span> <br> <br>
+              <span style="color: #050505; font-size: 18px;">You'll receive an email when your items are shipped.</span>
+              <br><br><br>
+            </div>
+
+            <div class="hero_column"
+              style="border-top: #ffffff solid 1px; border-bottom: #ffffff solid 1px; padding-top: 10px; padding-bottom: 10px;">
+              <div class="list" style="background-color: #ffffff;  margin-top: 5px; padding: 40px; ">
+                <img src="img/list.png" alt="List" width="85" height="85"><br><br>
+                <div>
+                  <strong style="font-size: 24px; color: #2190E3;">SUMMERY</strong>
+                </div><br>
+                <div>
+                  <strong style="font-size: 14px; color: #555555;">ORDER: <span
+                      style="color: #555555; font-weight: 300; ">9101938</span></strong><br>
+                  <div style="height: 5px;"></div>
+                  <strong style="font-size: 14px; color: #555555;">ORDER DATE: <span
+                      style="color: #555555; font-weight: 300; ">Apr 3, 2019</span></strong><br>
+                  <div style="height: 5px;"></div>
+                  <strong style="font-size: 14px; color: #555555;">ORDER TOTAL: <span
+                      style="color: #555555; font-weight: 300; ">$38,90</span></strong><br>
+                </div>
+              </div>
+
+              <div class="list" style="background-color: #ffffff; margin-top: 5px;">
+                <img src="img/002-shipped.png" alt="List" width="85" height="85"><br><br>
+                <div>
+                  <strong style="font-size: 24px; color: #FC7318;">SHIPPING ADDRESS</strong>
+                </div><br>
+                <div>
+                  <strong style="font-size: 14px; color: #555555;">HARRY MAC INTOSH</strong><br>
+                  <div style="height: 5px;"></div>
+                  <span style="color: #555555; font-weight: 300; ">123 Anywhere road</span><br>
+                  <div style="height: 5px;"></div>
+                  <span style="color: #555555; font-weight: 300; ">Anywhere, IT 82933</span><br>
+                </div>
+              </div>
+            </div><br><br>
+            <div style="text-align: center;">
+              <a href="#" class="button">VIEW ORDER STATUS › </a>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div style="text-align: center; font-size: 14px; font-weight: 400; padding: 20px; color: #050505">
+            <span>Items ordered:</span>
+          </div>
+        </td>
+      </tr>
+
+
+      <!-- Product table SECTION -->
+
+      <tr>
+        <td class="table">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">ITEM</th>
+                <th scope="col">DESC</th>
+                <th scope="col">QTY</th>
+                <th scope="col">PRICE</th>
+
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-label="ITEM">
+                  <div class="product_item">
+                    <div class="product_item_image">
+                      <img src="img/2_1.png" alt="">
+                    </div>
+
+                  </div>
+                </td>
+                <td data-label="DESC">
+                  <div class="product_item_text">
+                    <strong style="font-size: 16px; color: #2190E3; text-transform: uppercase;">Bag</strong> <br>
+                    <p style="font-size: 14px; color: #555555;">Sed et justo molestie, convallis ipsumac.</p>
+                  </div>
+                </td>
+                <td data-label="QTY">2</td>
+                <td style="font-size: 18px; font-weight: 700;" data-label="PRICE">45,00$</td>
+
+              </tr>
+
+              <tr>
+                <td data-label="ITEM">
+                  <div class="product_item">
+                    <div class="product_item_image">
+                      <img src="img/Coffee.png" alt="">
+                    </div>
+
+                  </div>
+                </td>
+                <td data-label="DESC">
+                  <div class="product_item_text">
+                    <strong style="font-size: 16px; color: #2190E3; text-transform: uppercase;">Coffee Cup</strong> <br>
+                    <p style="font-size: 14px; color: #555555;">Sed et justo molestie, convallis ipsumac.</p>
+                  </div>
+                </td>
+                <td data-label="QTY">2</td>
+                <td style="font-size: 18px; font-weight: 700;" data-label="PRICE">45,00$</td>
+
+              </tr>
+
+              <tr>
+                <td data-label="ITEM">
+                  <div class="product_item">
+                    <div class="product_item_image">
+                      <img src="img/Computer.png" alt="">
+                    </div>
+
+                  </div>
+                </td>
+                <td data-label="DESC">
+                  <div class="product_item_text">
+                    <strong style="font-size: 16px; color: #2190E3; text-transform: uppercase;">Computer</strong> <br>
+                    <p style="font-size: 14px; color: #555555;">Sed et justo molestie, convallis ipsumac.</p>
+                  </div>
+                </td>
+                <td data-label="QTY">2</td>
+                <td style="font-size: 18px; font-weight: 700;" data-label="PRICE">45,00$</td>
+
+              </tr>
+
+
+
+            </tbody>
+          </table>
+        </td>
+      </tr>
+      <!-- GIF BANNER IMAGE -->
+      <tr>
+        <td class="totals">
+          <table>
+            <tr>
+              <td style="margin-top: -20px;">
+                <div class="total" style="display: flex; justify-content: end; align-items: center;">
+                  <div class="total_text">
+                    <span style="font-size: 14px; color: #555555;">Subtotal (3 items)</span><br>
+                    <div style="height: 4px"></div>
+                    <span style="font-size: 14px; color: #555555;">Flat-rate shipping</span><br>
+                    <div style="height: 4px"></div>
+                    <span style="font-size: 14px; color: #555555;">First autoship discount</span><br>
+                    <div style="height: 4px"></div>
+                    <span style="font-size: 14px; color: #555555;">autoship discount</span><br>
+                    <div style="height: 4px"></div>
+                    <span style="font-size: 14px; color: #555555;">Estimated Tax</span><br><br>
+                    <div style="height: 4px"></div>
+                    <strong style="font-size: 14px; color: #555555;">Order total</strong>
+                  </div>
+                  <div class="total_number" style="font-weight: 700;">
+                    <span style="font-size: 14px; color: #555555;">15,00$</span><br>
+                    <div style="height: 4px"></div>
+                    <span style="font-size: 14px; color: #AAF096;">FREE</span><br>
+                    <div style="height: 4px"></div>
+                    <span style="font-size: 14px; color: #555555;">- $12,45</span><br>
+                    <div style="height: 4px"></div>
+                    <span style="font-size: 14px; color: #555555;">- $0,35</span><br>
+                    <div style="height: 4px"></div>
+                    <span style="font-size: 14px; color: #555555;">$ 0,00</span><br><br>
+                    <div style="height: 4px"></div>
+                    <strong style="font-size: 14px; color: #2190E3;">$ 49,35</strong>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+
+      <!-- TITLE, TEXT & BUTTON -->
+
+
+      <!-- BLUE BORDER -->
+
+
+      <!-- TWO COLUMN SECTION -->
+
+
+      <!-- BLUE BACKGROUND QUOTE -->
+
+
+      <!-- FOOTER SECTION -->
+      <tr>
+        <td>
+          <div>
+            <div class="img_container"
+              style="text-align: center; display: flex; justify-content: space-evenly; padding: 20px 5px;">
+
+              <div>
+
+                <img src="img/004-happiness.png" alt="Container" width="59" height="59"><br>
+                <span style="font-size: 14px;color: #555555;">Happiness</span>
+              </div>
+              <div>
+
+                <img src="img/003-recommended.png" alt="Container" width="59" height="59"><br>
+                <span style="font-size: 14px;color: #555555;">Recommended</span>
+              </div>
+              <div>
+
+                <img src="img/002-refund.png" alt="Container" width="59" height="59"><br>
+                <span style="font-size: 14px;color: #555555;">Refund</span>
+              </div>
+              <div>
+
+                <img src="img/001-customer-service.png" alt="Container" width="59" height="59"><br>
+                <span style="font-size: 14px;color: #555555;">Customers</span>
+              </div>
+            </div>
+          </div>
+        </td>
+
+      </tr>
+
+      <tr>
+        <td>
+          <div class="before_footer">
+            <div class="before_footer_items">
+              <span class="the_spen" style=" color: #FC7318; font-weight: 700;">Troubles</span> <br> <br>
+              <span class="the_spen" style=" color: #052D3D; font-weight: 500;">We're here to help you</span><br> <br>
+              <span style="font-size: 18px;">Lorem ipsum dolor sit amet at <a href="mailto:support@netshop.com"
+                  style="text-decoration: none; color: #2190E3; font-weight: 700;">support@netshop.com</a></span><br>
+              <div style="height: 4px"></div>
+              <span style="font-size: 18px;">or call us at <a href="tel:(389) 839289328932"
+                  style="text-decoration: none; color: #2190E3; font-weight: 700;">(389) 839289328932</a></span><br>
+              <div style="height: 4px"></div>
+              <strong style="font-size: 18px;">Monday through Friday 8:30-5:30 PST</strong>
+            </div>
+          </div>
+        </td>
+      </tr>
+
+      <!-- FOOTER -->
+      <tr>
+        <td style="background-color: #F5F5F5; padding: 20px 40px; text-align: center;">
+          <div>
+            <a href="#"><img src="img/facebook@2x.png" alt="Icon" width="32" height="32" style="padding: 10px;"></a>
+            <a href="#"><img src="img/twitter@2x.png" alt="Icon" width="32" height="32" style="padding: 10px;"></a>
+            <a href="#"><img src="img/instagram@2x.png" alt="Icon" width="32" height="32" style="padding: 10px;"></a>
+            <a href="#"><img src="img/pinterest@2x.png" alt="Icon" width="32" height="32" style="padding: 10px;"></a>
+          </div>
+          <div>
+            <p style="font-size: 14px;">NetShop - Lorem ipsum dolor sit amet hasellus sagittis aliquam luctus.</p>
+            <p style="font-size: 14px;">329 California St, San Francisco, CA 94118</p>
+          </div><br>
+          <div style="border-top: 1px dashed #555555; width: 400px; margin: 10px auto;"></div>
+          <div>
+            <span><a href="#" style="text-decoration: none; font-size: 14px; color: #2190E3;">Help& FAQ's </a>|</span>
+            <span><a href="#" style="text-decoration: none; font-size: 14px; color: #2190E3;">Returns </a>|</span>
+            <span style=" font-size: 14px; color: #555555;"> 1-998-9283-19832</span>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </center>
+
+</body>
+
+</html>
